@@ -163,6 +163,14 @@ class Tree:
             self.__del_one_child(sr, pr)
 
 
+def size(node):
+    """
+    Подсчет кол-ва элементов в дереве с помощью рекурсии
+    """
+    if node==None:
+        return 0
+    return(size(node.left) + 1 + size(node.right))
+
 # список добовляемых значений
 # v = [10, 5, 7, 16, 13, 2, 20]
 v = [20, 5, 24, 2, 16, 11, 18]
@@ -174,3 +182,5 @@ for x in v:
 
 t.del_node(5)
 t.show_wide_tree(t.root)
+
+print("Кол-во элементов в дереве:", size(t.root))
